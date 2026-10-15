@@ -1,0 +1,65 @@
+control_id,domain,asset_target,parameter,expected_value,severity,weight,compliance_mapping,remediation_steps,mitre_technique
+CTRL-001,AWS Cloud,production-db-s3,root_account_mfa,enabled,CRITICAL,10,NIST SP 800-53 (IA-2),Enable MFA via AWS IAM Console.,T1556 - Modify Authentication Process
+CTRL-002,AWS Cloud,user-vault-s3,root_account_mfa,enabled,CRITICAL,10,NIST SP 800-53 (IA-2),Enable MFA via AWS IAM Console.,T1556 - Modify Authentication Process
+CTRL-003,AWS Cloud,app-logs-s3,root_account_mfa,enabled,CRITICAL,10,NIST SP 800-53 (IA-2),Enable MFA via AWS IAM Console.,T1556 - Modify Authentication Process
+CTRL-004,AWS Cloud,billing-data-s3,root_account_mfa,enabled,CRITICAL,10,NIST SP 800-53 (IA-2),Enable MFA via AWS IAM Console.,T1556 - Modify Authentication Process
+CTRL-005,AWS Cloud,production-db-s3,s3_bucket_public_access,blocked,CRITICAL,10,"CIS AWS 1.1, GDPR Art 32",Enforce S3 Block Public Access setting.,T1530 - Data from Cloud Storage Object
+CTRL-006,AWS Cloud,user-vault-s3,s3_bucket_public_access,blocked,CRITICAL,10,"CIS AWS 1.1, GDPR Art 32",Enforce S3 Block Public Access setting.,T1530 - Data from Cloud Storage Object
+CTRL-007,AWS Cloud,app-logs-s3,s3_bucket_public_access,blocked,CRITICAL,10,"CIS AWS 1.1, GDPR Art 32",Enforce S3 Block Public Access setting.,T1530 - Data from Cloud Storage Object
+CTRL-008,AWS Cloud,billing-data-s3,s3_bucket_public_access,blocked,CRITICAL,10,"CIS AWS 1.1, GDPR Art 32",Enforce S3 Block Public Access setting.,T1530 - Data from Cloud Storage Object
+CTRL-009,AWS Cloud,production-db-s3,cloudtrail_logging,enabled,HIGH,8,NIST SP 800-53 (SI-4),Re-enable CloudTrail via Terraform.,T1562.008 - Impair Defenses: Disable Cloud Logs
+CTRL-010,AWS Cloud,user-vault-s3,cloudtrail_logging,enabled,HIGH,8,NIST SP 800-53 (SI-4),Re-enable CloudTrail via Terraform.,T1562.008 - Impair Defenses: Disable Cloud Logs
+CTRL-011,AWS Cloud,app-logs-s3,cloudtrail_logging,enabled,HIGH,8,NIST SP 800-53 (SI-4),Re-enable CloudTrail via Terraform.,T1562.008 - Impair Defenses: Disable Cloud Logs
+CTRL-012,AWS Cloud,billing-data-s3,cloudtrail_logging,enabled,HIGH,8,NIST SP 800-53 (SI-4),Re-enable CloudTrail via Terraform.,T1562.008 - Impair Defenses: Disable Cloud Logs
+CTRL-013,AWS Cloud,production-db-s3,kms_key_rotation,enabled,MEDIUM,5,CIS AWS 2.8,Enable annual rotation on customer managed keys.,T1600.001 - Weaken Encryption: Reduce Key Space
+CTRL-014,AWS Cloud,user-vault-s3,kms_key_rotation,enabled,MEDIUM,5,CIS AWS 2.8,Enable annual rotation on customer managed keys.,T1600.001 - Weaken Encryption: Reduce Key Space
+CTRL-015,AWS Cloud,app-logs-s3,kms_key_rotation,enabled,MEDIUM,5,CIS AWS 2.8,Enable annual rotation on customer managed keys.,T1600.001 - Weaken Encryption: Reduce Key Space
+CTRL-016,AWS Cloud,billing-data-s3,kms_key_rotation,enabled,MEDIUM,5,CIS AWS 2.8,Enable annual rotation on customer managed keys.,T1600.001 - Weaken Encryption: Reduce Key Space
+CTRL-017,Network Firewall,hq-edge-fw,port_8080_ingress,blocked,HIGH,8,CIS Firewall Benchmark 1.2,Close public port 8080 ingress; route via VPN.,T1133 - External Remote Services
+CTRL-018,Network Firewall,dublin-dc-switch,port_8080_ingress,blocked,HIGH,8,CIS Firewall Benchmark 1.2,Close public port 8080 ingress; route via VPN.,T1133 - External Remote Services
+CTRL-019,Network Firewall,tokyo-office-router,port_8080_ingress,blocked,HIGH,8,CIS Firewall Benchmark 1.2,Close public port 8080 ingress; route via VPN.,T1133 - External Remote Services
+CTRL-020,Network Firewall,dmz-firewall,port_8080_ingress,blocked,HIGH,8,CIS Firewall Benchmark 1.2,Close public port 8080 ingress; route via VPN.,T1133 - External Remote Services
+CTRL-021,Network Firewall,hq-edge-fw,ssh_port_22_ingress,blocked,CRITICAL,10,NIST SP 800-53 (AC-17),Restrict port 22 access to secure jumpbox IPs.,T1133 - External Remote Services
+CTRL-022,Network Firewall,dublin-dc-switch,ssh_port_22_ingress,blocked,CRITICAL,10,NIST SP 800-53 (AC-17),Restrict port 22 access to secure jumpbox IPs.,T1133 - External Remote Services
+CTRL-023,Network Firewall,tokyo-office-router,ssh_port_22_ingress,blocked,CRITICAL,10,NIST SP 800-53 (AC-17),Restrict port 22 access to secure jumpbox IPs.,T1133 - External Remote Services
+CTRL-024,Network Firewall,dmz-firewall,ssh_port_22_ingress,blocked,CRITICAL,10,NIST SP 800-53 (AC-17),Restrict port 22 access to secure jumpbox IPs.,T1133 - External Remote Services
+CTRL-025,Network Firewall,hq-edge-fw,outbound_data_leaks,restricted,HIGH,8,GDPR Art 25,Re-apply egress filtering rules on firewall appliance.,T1048 - Exfiltration Over Alternative Protocol
+CTRL-026,Network Firewall,dublin-dc-switch,outbound_data_leaks,restricted,HIGH,8,GDPR Art 25,Re-apply egress filtering rules on firewall appliance.,T1048 - Exfiltration Over Alternative Protocol
+CTRL-027,Network Firewall,tokyo-office-router,outbound_data_leaks,restricted,HIGH,8,GDPR Art 25,Re-apply egress filtering rules on firewall appliance.,T1048 - Exfiltration Over Alternative Protocol
+CTRL-028,Network Firewall,dmz-firewall,outbound_data_leaks,restricted,HIGH,8,GDPR Art 25,Re-apply egress filtering rules on firewall appliance.,T1048 - Exfiltration Over Alternative Protocol
+CTRL-029,Network Firewall,hq-edge-fw,timeout_period,600,LOW,2,CIS Benchmark 4.1,Revert session timeout durations back to 10 minutes.,T1078 - Valid Accounts
+CTRL-030,Network Firewall,dublin-dc-switch,timeout_period,600,LOW,2,CIS Benchmark 4.1,Revert session timeout durations back to 10 minutes.,T1078 - Valid Accounts
+CTRL-031,Network Firewall,tokyo-office-router,timeout_period,600,LOW,2,CIS Benchmark 4.1,Revert session timeout durations back to 10 minutes.,T1078 - Valid Accounts
+CTRL-032,Network Firewall,dmz-firewall,timeout_period,600,LOW,2,CIS Benchmark 4.1,Revert session timeout durations back to 10 minutes.,T1078 - Valid Accounts
+CTRL-033,Kubernetes,prod-core-cluster,allow_privileged_containers,false,CRITICAL,10,CIS Kubernetes 5.2.1,Update PodSecurityPolicy to deny privileged pods.,T1611 - Escape to Host
+CTRL-034,Kubernetes,staging-mesh,allow_privileged_containers,false,CRITICAL,10,CIS Kubernetes 5.2.1,Update PodSecurityPolicy to deny privileged pods.,T1611 - Escape to Host
+CTRL-035,Kubernetes,payment-gateway-k8s,allow_privileged_containers,false,CRITICAL,10,CIS Kubernetes 5.2.1,Update PodSecurityPolicy to deny privileged pods.,T1611 - Escape to Host
+CTRL-036,Kubernetes,auth-service-nodes,allow_privileged_containers,false,CRITICAL,10,CIS Kubernetes 5.2.1,Update PodSecurityPolicy to deny privileged pods.,T1611 - Escape to Host
+CTRL-037,Kubernetes,prod-core-cluster,network_policy_default_deny,true,HIGH,8,CIS Kubernetes 5.1.4,Apply default-deny ingress network isolation manifest.,T1599 - Network Boundary Bridging
+CTRL-038,Kubernetes,staging-mesh,network_policy_default_deny,true,HIGH,8,CIS Kubernetes 5.1.4,Apply default-deny ingress network isolation manifest.,T1599 - Network Boundary Bridging
+CTRL-039,Kubernetes,payment-gateway-k8s,network_policy_default_deny,true,HIGH,8,CIS Kubernetes 5.1.4,Apply default-deny ingress network isolation manifest.,T1599 - Network Boundary Bridging
+CTRL-040,Kubernetes,auth-service-nodes,network_policy_default_deny,true,HIGH,8,CIS Kubernetes 5.1.4,Apply default-deny ingress network isolation manifest.,T1599 - Network Boundary Bridging
+CTRL-041,Kubernetes,prod-core-cluster,dashboard_exposed,false,HIGH,8,NIST SP 800-53 (SC-7),Disable public access route to K8s dashboard dashboard.,T1133 - External Remote Services
+CTRL-042,Kubernetes,staging-mesh,dashboard_exposed,false,HIGH,8,NIST SP 800-53 (SC-7),Disable public access route to K8s dashboard dashboard.,T1133 - External Remote Services
+CTRL-043,Kubernetes,payment-gateway-k8s,dashboard_exposed,false,HIGH,8,NIST SP 800-53 (SC-7),Disable public access route to K8s dashboard dashboard.,T1133 - External Remote Services
+CTRL-044,Kubernetes,auth-service-nodes,dashboard_exposed,false,HIGH,8,NIST SP 800-53 (SC-7),Disable public access route to K8s dashboard dashboard.,T1133 - External Remote Services
+CTRL-045,Kubernetes,prod-core-cluster,image_pull_policy,Always,LOW,2,CIS Kubernetes 4.2,Reset container deployment pull policy configuration.,T1036 - Masquerading
+CTRL-046,Kubernetes,staging-mesh,image_pull_policy,Always,LOW,2,CIS Kubernetes 4.2,Reset container deployment pull policy configuration.,T1036 - Masquerading
+CTRL-047,Kubernetes,payment-gateway-k8s,image_pull_policy,Always,LOW,2,CIS Kubernetes 4.2,Reset container deployment pull policy configuration.,T1036 - Masquerading
+CTRL-048,Kubernetes,auth-service-nodes,image_pull_policy,Always,LOW,2,CIS Kubernetes 4.2,Reset container deployment pull policy configuration.,T1036 - Masquerading
+CTRL-049,Endpoint Security,finance-dept-vdi,agent_status,running,HIGH,8,NIST SP 800-53 (CM-2),Restart the endpoint agent service daemon via orchestration.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-050,Endpoint Security,domain-controller-01,agent_status,running,HIGH,8,NIST SP 800-53 (CM-2),Restart the endpoint agent service daemon via orchestration.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-051,Endpoint Security,payroll-server-win,agent_status,running,HIGH,8,NIST SP 800-53 (CM-2),Restart the endpoint agent service daemon via orchestration.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-052,Endpoint Security,exec-laptop-fleet,agent_status,running,HIGH,8,NIST SP 800-53 (CM-2),Restart the endpoint agent service daemon via orchestration.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-053,Endpoint Security,finance-dept-vdi,edr_realtime_scan,enabled,CRITICAL,10,NIST SP 800-53 (SI-3),Re-enable real-time file behavioral scanning protection.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-054,Endpoint Security,domain-controller-01,edr_realtime_scan,enabled,CRITICAL,10,NIST SP 800-53 (SI-3),Re-enable real-time file behavioral scanning protection.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-055,Endpoint Security,payroll-server-win,edr_realtime_scan,enabled,CRITICAL,10,NIST SP 800-53 (SI-3),Re-enable real-time file behavioral scanning protection.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-056,Endpoint Security,exec-laptop-fleet,edr_realtime_scan,enabled,CRITICAL,10,NIST SP 800-53 (SI-3),Re-enable real-time file behavioral scanning protection.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-057,Endpoint Security,finance-dept-vdi,usb_mass_storage,blocked,MEDIUM,5,GDPR Art 32,Re-apply corporate endpoint group policy asset block.,T1052.001 - Exfiltration Over Physical Medium: USB
+CTRL-058,Endpoint Security,domain-controller-01,usb_mass_storage,blocked,MEDIUM,5,GDPR Art 32,Re-apply corporate endpoint group policy asset block.,T1052.001 - Exfiltration Over Physical Medium: USB
+CTRL-059,Endpoint Security,payroll-server-win,usb_mass_storage,blocked,MEDIUM,5,GDPR Art 32,Re-apply corporate endpoint group policy asset block.,T1052.001 - Exfiltration Over Physical Medium: USB
+CTRL-060,Endpoint Security,exec-laptop-fleet,usb_mass_storage,blocked,MEDIUM,5,GDPR Art 32,Re-apply corporate endpoint group policy asset block.,T1052.001 - Exfiltration Over Physical Medium: USB
+CTRL-061,Endpoint Security,finance-dept-vdi,definition_age_days,0,LOW,2,CIS Endpoint 2.1,Force immediate update of local anti-malware definition signatures.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-062,Endpoint Security,domain-controller-01,definition_age_days,0,LOW,2,CIS Endpoint 2.1,Force immediate update of local anti-malware definition signatures.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-063,Endpoint Security,payroll-server-win,definition_age_days,0,LOW,2,CIS Endpoint 2.1,Force immediate update of local anti-malware definition signatures.,T1562.001 - Impair Defenses: Disable or Modify Tools
+CTRL-064,Endpoint Security,exec-laptop-fleet,definition_age_days,0,LOW,2,CIS Endpoint 2.1,Force immediate update of local anti-malware definition signatures.,T1562.001 - Impair Defenses: Disable or Modify Tools
